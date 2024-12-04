@@ -8,3 +8,9 @@ This program does the following
 The output includes the aarohanam (ascending notes) and avarohanam(descending notes).
 
 The avarohanam is the mirror image of aarohanam.
+
+Execution
+
+From the project folder, execute the following command.
+
+```python ./__main.py```
