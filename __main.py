@@ -1,4 +1,5 @@
 import functools
+import sys
 
 print("Welcome to Musical Note Synthesizer!")
 
@@ -95,7 +96,19 @@ numSwarams = 4
 
 # print(f"These are the {numSwarams} swarams after {searchNote}")
 # print(getNextNNotes(searchNote,numSwarams))
-pattern = ["s", "p", "g", "r"]
+# pattern = ["s", "p", "g", "r", "s"]
+pattern = []
+
+print("Enter each swaram of the pattern followed by a newline: ")
+for line in sys.stdin:
+    if 'q' == line.rstrip():
+        break
+    if line.rstrip() in notes:
+        pattern.append(line.rstrip())
+    else:
+        raise("Invalid note")
+ 
+print("pattern = ", pattern)
 # print(getNextSequenceForPattern(pattern))
 numSequences = 5
 fullpattern = getNextNSequenceForPattern(pattern, numSequences)
