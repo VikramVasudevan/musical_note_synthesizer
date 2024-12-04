@@ -9,7 +9,7 @@ The output includes the aarohanam (ascending notes) and avarohanam(descending no
 
 The avarohanam is the mirror image of aarohanam.
 
-Execution
+**Execution**
 
 From the project folder, execute the following command.
 
