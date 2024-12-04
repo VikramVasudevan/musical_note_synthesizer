@@ -31,10 +31,11 @@ def playSwaramPattern(prmPattern):
             sound = pygame.mixer.Sound(sound_file)
 
             # Play the sound
-            sound.play(maxtime=4000, fade_ms=1000)
+            sound.play(maxtime=2000, fade_ms=1000)
 
             # Wait for the sound to finish playing
-            pygame.time.wait(int(sound.get_length() * 1000))
+            # pygame.time.wait(int(sound.get_length() * 1000))
+            pygame.time.wait(2000)
 
 
 def getNextNote(prmNote):
