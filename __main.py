@@ -1,10 +1,40 @@
 import functools
 import sys
+import pygame
 
 print("Welcome to Musical Note Synthesizer!")
 
 # notes = ["S","R","G","M","P","D","N"]
-notes = ["s", "r", "g", "p", "d", "S", "R", "G", "P", "D"]
+notes = ["s", "r", "g", "p", "d", "S", "R", "G", "P"]
+audioMap = [
+    "sa lower.mp3",
+    "ri.mp3",
+    "ga.mp3",
+    "pa.mp3",
+    "dha.mp3",
+    "sa higher.mp3",
+    "ri higher.mp3",
+    "ga higher.mp3",
+    "pa higher.mp3",
+]
+
+
+def playSwaramPattern(prmPattern):
+    # Initialize the pygame mixer
+    pygame.mixer.init()
+
+    for sequence in prmPattern:
+        for swaram in sequence:
+            swaramIndex = notes.index(swaram)
+            # Load a sound file
+            sound_file = "./audio/" + audioMap[swaramIndex]
+            sound = pygame.mixer.Sound(sound_file)
+
+            # Play the sound
+            sound.play(maxtime=4000, fade_ms=1000)
+
+            # Wait for the sound to finish playing
+            pygame.time.wait(int(sound.get_length() * 1000))
 
 
 def getNextNote(prmNote):
@@ -106,8 +136,8 @@ for line in sys.stdin:
     if line.rstrip() in notes:
         pattern.append(line.rstrip())
     else:
-        raise("Invalid note")
- 
+        raise ("Invalid note")
+
 print("pattern = ", pattern)
 # print(getNextSequenceForPattern(pattern))
 numSequences = 5
@@ -123,3 +153,5 @@ printPattern(fullpattern)
 
 # print("Mirror Image = ")
 # print(getMirrorImageForPattern(pattern))
+
+playSwaramPattern(fullpattern)
