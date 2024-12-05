@@ -129,9 +129,12 @@ numSwarams = 4
 # print(getNextNNotes(searchNote,numSwarams))
 # pattern = ["s", "p", "g", "r", "s"]
 pattern = []
-
-print("Enter each swaram of the pattern followed by a newline. Enter q when done")
-print("For example enter s r g p q (with newline in between)")
+print("This program is designed to teach swaram patterns in carnatic music.")
+print("Given the starting pattern from a sequence, the program derives the remaining patterns in the sequence through extrapolation")
+print("Additionally, the program creates the mirror image pattern while descending down (avarohanam)")
+print("Finally, the program also demonstrates the pattern by singing it for you!")
+print("*****Enter each swaram of the pattern followed by a newline. Enter q when done *****")
+print("*****For example enter s r g p q (with a newline in between)*****")
 for line in sys.stdin:
     if 'q' == line.rstrip():
         break
