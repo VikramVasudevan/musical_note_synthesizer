@@ -130,7 +130,8 @@ numSwarams = 4
 # pattern = ["s", "p", "g", "r", "s"]
 pattern = []
 
-print("Enter each swaram of the pattern followed by a newline: ")
+print("Enter each swaram of the pattern followed by a newline. Enter q when done")
+print("For example enter s r g p q (with newline in between)")
 for line in sys.stdin:
     if 'q' == line.rstrip():
         break
